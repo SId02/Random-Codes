@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Css Animation-Transfrom</title>
+	<style>
+		*,
+		body {
+			margin: 0;
+			color: #fff;
+			font-size: 24px;
+		}
+
+		h1 {
+			text-align: center;
+			color: #232323;
+			margin-bottom: 50px;
+		}
+
+		.wrapper {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+
+		.animation {
+			width: 150px;
+			padding: 5px 15px;
+			text-align: center;
+			box-shadow: 0px 7px 10px -5px rgba(0, 0, 0, 0.9);
+			transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+		}
+
+		.shake {
+			background: #d50000;
+		}
+
+		.shake:hover {
+			animation: shake 0.22s linear 4;
+			background-color: #3e2723;
+		}
+
+		@keyframes shake {
+			0% {
+				transform: translateX(0);
+			}
+			25% {
+				transform: translateX(-10px);
+			}
+			75% {
+				transform: translateX(10px);
+			}
+			100% {
+				transform: translateX(0);
+			}
+		}
+
+		.bounce {
+			background: #aa00ff;
+		}
+
+		.bounce:hover {
+			animation: bounce 0.7s ease-out;
+		}
+
+
+		@keyframes bounce {
+			0% {
+				transform: translateY(0);
+			}
+			25%,
+			45% {
+				transform: translateY(-15px);
+			}
+			50% {
+				transform: translateY(0);
+			}
+			70% {
+				transform: translateY(-8px);
+			}
+			80% {
+				transform: translateY(0);
+			}
+			90% {
+				transform: translateY(-8px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		.flash {
+			background: #6200ea;
+		}
+
+		.flash:hover {
+			animation: flash 0.7s ease-out 2;
+		}
+
+		@keyframes flash {
+			0%,
+			10% {
+				opacity: 1;
+			}
+			20%,
+			50% {
+				opacity: 0;
+			}
+			100% {
+				opacity: 1;
+			}
+		}
+
+		.pulse {
+			background: #ff6f00;
+		}
+
+		.pulse:hover {
+			animation: pulse 0.7s ease-out;
+			background-color: #212121;
+		}
+
+		@keyframes pulse {
+			0% {
+				transform: scale(1);
+			}
+			40%,
+			70% {
+				transform: scale(1.2);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Animation on Hover</h1>
+	<div class="wrapper">
+		<div class="animation shake">Shake</div>
+		<div class="animation bounce">Bounce</div>
+		<div class="animation flash">Flash</div>
+		<div class="animation pulse">Pulse</div>
+	</div>
+</body>
+
+</html>

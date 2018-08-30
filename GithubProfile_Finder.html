@@ -1,0 +1,80 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <title>GithubProfile finder</title>
+        <style>
+            img {
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <form id="userForm" action="">
+                <div class="input-field ">
+                    <label for="">GitHub username:</label>
+                    <input type="text" name="" id="username" class="form-control">
+                </div>
+            </form>
+            <div id="profile"></div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script>
+            function getProfile(event) {
+                event.preventDefault();
+
+                var username = document.getElementById('username').value;
+           
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var user = JSON.parse(xhr.responseText);
+                        document.getElementById('profile').
+                        innerHTML =
+                            `
+
+    <div class="collection">
+          <div class="collection with-header">
+            <h3 class="collection-header">${user.name}</h3>
+          </div>
+           <div class="collection-item">
+             <div class="row">
+                <div class="col m3">
+                  <img src="${user.avatar_url}" alt="" />
+                   <a class="btn-small target="_blank" href="${user.html_url}">Visit Github</a>
+                </div>
+          <div class="col m9">
+            <span class="new badge">Public Respos ${user.public_repos}</span>
+    <span class="new badge">Public Gists ${user.public_gists}</span>
+    <br><br>
+    <ul class="collection">
+       <li class="collection-item">Website : ${user.name}</li>
+          <li class="collection-item">Website : ${user.blog}</li>
+          <li class="collection-item">Email : ${user.email}</li>
+          <li class="collection-item">Bio: ${user.bio}</li>
+          <li class="collection-item">Followers} : ${user.followers}</li>
+           <li class="collection-item">Following : ${user.following}</li>
+           <li class="collection-item">Following : ${user.created_at}</li>
+
+     </ul>
+          </div>
+             </div>
+           </div>
+
+         </div>  `;
+                    }
+                }
+                xhr.open('GET', 'https://api.github.com/users/' + username, true);
+                xhr.send();
+            }
+
+            document.getElementById("userForm").addEventListener('submit', getProfile, false);
+        </script>
+    </body>
+
+    </html>
