@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Sliding Text using CSS Animation</title>
+</head>
+
+<body>
+  <style>
+    /* slidingText1 */
+    .slidingText1 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText1 h3 {
+      font-size: 2em;
+      color: #d50000;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText1 20s linear infinite;
+    }
+
+    @keyframes slidingText1 {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* slidingText2 */
+    .slidingText2 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText2 h3 {
+      font-size: 2em;
+      color: #aa00ff;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText2 20s linear infinite;
+    }
+
+    @keyframes slidingText2 {
+      0% {
+        transform: translateX(50%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* slidingText3 */
+
+    .slidingText3 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText3 h3 {
+      font-size: 2em;
+      color: #6200ea;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText3 20s linear infinite;
+    }
+
+    @keyframes slidingText3 {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    /* slidingText4 */
+    .slidingText4 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText4 h3 {
+      font-size: 2em;
+      color: #ff6f00;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText4 20s linear infinite;
+    }
+
+    @keyframes slidingText4 {
+      0% {
+
+        transform: translateY(-100%);
+      }
+
+      100% {
+
+        transform: translateY(100%);
+      }
+    }
+
+    /* slidingText5 */
+    .slidingText5 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText5 h3 {
+      font-size: 2em;
+      color: #d50000;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText5 5s linear infinite;
+    }
+
+    @keyframes slidingText5 {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(50%);
+      }
+    }
+
+    /* slidingText6 */
+
+    .slidingText6 {
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .slidingText6 h3 {
+      font-size: 2em;
+      color: #aa00ff;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      line-height: 50px;
+      text-align: center;
+      transform: translateX(100%);
+      animation: slidingText6 10s linear infinite;
+    }
+
+    @keyframes slidingText6 {
+      0% {
+
+        transform: translateY(100%);
+      }
+
+      100% {
+
+        transform: translateY(-100%);
+      }
+    }
+  </style>
+  <div class="slidingText1">
+    <h3>CSS Animation </h3>
+  </div>
+  <hr>
+  <div class="slidingText2">
+    <h3>CSS Animation  </h3>
+  </div>
+  <hr>
+  <div class="slidingText3">
+    <h3>CSS Animation  </h3>
+  </div>
+  <hr>
+  <div class="slidingText4">
+    <h3>CSS Animation  </h3>
+  </div>
+  <hr>
+  <div class="slidingText5">
+    <h3>CSS Animation  </h3>
+  </div>
+  <hr>
+  <div class="slidingText6">
+    <h3>CSS Animation  </h3>
+  </div>
+  <hr>
+</body>
+
+</html>

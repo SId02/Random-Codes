@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+    @keyframes slide {
+        0% {
+            left: 0%;
+        }
+        20% {
+            left: 0%;
+        }
+        25% {
+            left: -100%;
+        }
+        45% {
+            left: -100%;
+        }
+        50% {
+            left: -200%;
+        }
+        70% {
+            left: -200%;
+        }
+        75% {
+            left: -300%;
+        }
+        95% {
+            left: -300%;
+        }
+        100% {
+            left: -400%;
+        }
+    }
+
+    body {
+        margin: 0;
+    }
+
+    #slider {
+        overflow: hidden;
+    }
+
+    #slider section img {
+        height: 100vh;
+        width: 20%;
+        float: left;
+    }
+
+    #slider section {
+        position: relative;
+        width: 500%;
+        margin: 0;
+        left: 0;
+        text-align: left;
+        font-size: 0;
+        animation: 30s slide infinite;
+    }
+    </style>
+    <title>Image Slider Using CSS Only</title>
+</head>
+
+<body>
+    <div id="slider">
+        <section>
+            <img src="https://source.unsplash.com/1600x900/?nature">
+            <img src="https://source.unsplash.com/1600x900/?water" />
+            <img src="https://source.unsplash.com/1600x900/?animal" />
+            <img src="https://source.unsplash.com/1600x900/?electronics" />
+            <img src="https://source.unsplash.com/1600x900/?phone" />
+        </section>
+    </div>
+</body>
+
+</html>
