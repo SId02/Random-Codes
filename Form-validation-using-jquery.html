@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Form-validation-using-jquery</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+  <style>
+    .formvalid{
+  margin: 0 auto;
+  padding: 2em;
+     background-color: #99AAAB;
+}
+</style>
+</head>
+<body>
+  <div class="container formvalid">
+    <form action="">
+      <div class="errmsg"></div>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input class="input name" type="text" placeholder="Enter">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control">
+          <input class="input email" type="email" placeholder="Email">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Message</label>
+        <div class="control">
+          <textarea class="textarea msg" placeholder="Message"></textarea>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <button type="submit" class="button is-rounded is-dark">Submit</button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('form').submit(function(event) {
+        event.preventDefault();
+
+        var errmsg = "";
+
+        if ($('.name').val() === "") {
+          errmsg += "Enter Name <br>";
+        }
+
+        if ($('.email').val() === "") {
+          errmsg += "Please Enter the Email Correctly <br>";
+        }
+
+        if ($('.msg').val() === "") {
+          errmsg += "Enter Message <br><br> ";
+        }
+
+        if (errmsg !== "") {
+          $('.errmsg').html(
+            '<div class="notification is-danger"><p><strong>Please Enter the Correct details:</strong></p>' +
+            errmsg + '</div>');
+          $(".name").addClass("is-danger");
+          $(".email").addClass("is-danger");
+          $(".msg").addClass("is-danger");
+        } else {
+          $('form').unbind('submit').submit();
+          $('.errmsg').html(
+            '<div class="notification  is-success"><p><strong>Please Enter the Correct details:</strong></p>' +
+            errmsg + '</div>');
+          $(".name").removeClass("is-danger");
+          $(".email").removeClass("is-danger");
+          $(".msg").removeClass("is-danger");
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>

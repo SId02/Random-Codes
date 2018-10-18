@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.body{
+			margin: 0px;
+		}
+		img{
+			overflow: hidden;
+        height: 100vh;
+    }
+	</style>
+</head>
+<body>
+
+	<img  name="slide" width="1000" height="1500" />
+
+
+	<script>
+		
+			let i = 0; 			
+			let images = [];	
+			let time = 2000;	
+	 
+			images[0] = "https://source.unsplash.com/1000x1500/?nature";
+			images[1] = "https://source.unsplash.com/1000x1500/?water";
+			images[2] = "https://source.unsplash.com/1000x1500/?animal";
+			images[3] = "https://source.unsplash.com/1000x1500/?electronics";
+			images[4] = "https://source.unsplash.com/1000x1500/?phone";
+
+			function changeImg(){
+				document.slide.src = images[i];
+				if(i < images.length - 1){
+				  i++; 
+				} else { 
+					
+					i = 0;
+				}
+				setTimeout("changeImg()", time);
+			}
+			window.onload=changeImg;
+	</script>
+</body>
+</html>
