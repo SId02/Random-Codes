@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+.container {
+	display: grid;
+	align-content: center;
+}
+.products {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+	justify-items: center;
+	align-content: center;
+/*	grid-row-gap: 3rem;*/
+	border: 1px solid #333;
+/*	margin-top: 35px;*/
+}
+.pname,.price {
+	display: grid;
+	justify-items: center;
+}
+.pname {
+	font-weight: 300;
+	margin-top: 1rem;
+}
+.p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8{
+	margin: 1rem;
+	background-color: teal;
+
+}
+.price{
+	margin: 1rem;
+	color: #fff;
+}
+</style>
+</head>
+<body class="container">
+	<section class="products">
+			<div class="p1">
+				<img src="https://source.unsplash.com/300x200/?nature">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p2">
+				<img src="https://source.unsplash.com/300x200/?city">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p3">
+				<img src="https://source.unsplash.com/300x200/?phone">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p4">
+				<img src="https://source.unsplash.com/300x200/?water">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p5">
+				<img src="https://source.unsplash.com/300x200/?animal">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p6">
+				<img src="https://source.unsplash.com/300x200/?coffee">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p7">
+				<img src="https://source.unsplash.com/300x200/?laughing">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+			<div class="p8">
+				<img src="https://source.unsplash.com/300x200/?electronics">
+				<h3 class="pname">Product Name</h3>
+				<span class="price">Rs100</span>
+			</div>
+		</section>
+</body>
+</html>
+
+
+
