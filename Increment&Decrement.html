@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+  <title>Increment & Decrement </title>
+</head>
+<body>
+<div class="counter">
+  <h1 class="count" style="font-size: 3em;"></h1>
+  <button class="inc" onclick="increment()"> <i class="fas fa-plus fa-3x"></i></button>
+  <button class="dec" onclick="decrement()"><i class="fas fa-minus fa-3x"></i></button>
+</div>
+
+
+  <script>
+  let count = 0
+const incdecount = document.getElementsByClassName('count')[0]
+function increment() { incdecount.innerText = ++count }
+function decrement() { incdecount.innerText = --count }
+  </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>checkboxValidate</title>
+    <style>
+    </style>
+</head>
+<body>
+
+<div  class="PassportC">
+  <label for="chkPassport">
+          <input type="checkbox" class="PassportCheck" />
+          Do you have Passport?</label>
+      <br /><br />
+      <input type="button" class="btnCheck"  onclick = "validatePass()" value = "validatePass" >
+</div>
+
+<hr>
+
+
+<div class="Checkbox">
+  <label><input class="check" type="checkbox" >One</label><br>
+  <button onclick="validateCheckbox()">Check value</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+    function validatePass() {
+        let checkPass = document.querySelector(".PassportCheck");
+        if (checkPass.checked) {
+            alert("Passport selected");
+        } else {
+            alert("Please  Select Passport");
+        }
+    }
+
+/*------------------------------------------------------------------------------------ */
+
+    function validateCheckbox(){
+            let res = document.querySelector(".check").checked;
+                alert(res);
+         }
+    </script>
+</body>
+</html>
