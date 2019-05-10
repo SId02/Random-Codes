@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>hoveranimation</title>
+<style>
+
+
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e6e0e0;
+}
+
+.button {
+  font-size: 3rem;
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  text-transform: uppercase;
+}
+
+.button::before {
+  background: linear-gradient(80deg, #25CCF7, #2F363F, #E74292, #8B78E6, #EAF0F1, #616C6F, #FAD02E, #6AB04A);
+  background-size: 200%;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: -4px;
+  left: -4px;
+}
+.button:hover::before {
+    animation: hoveranimation 1.5s linear infinite;
+}
+
+@keyframes hoveranimation {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
+</style>
+
+ 
+</head>
+<body>
+  <button class="button">Buy Now</button>
+</body>
+</html>

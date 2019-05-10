@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>avatar collection</title>
+    <style>
+        .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+    justify-items: center;
+   	margin: 8rem;
+ }
+  .avatar {
+  vertical-align: middle;
+width: 18vw;
+font-size: 35rem;
+height: 40vh;
+}
+
+button {
+  border: none;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #008CBA;
+  margin: 1rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bolder;
+  color: #fff;
+  background: #B2FEFA;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0ED2F7, #B2FEFA);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0ED2F7, #B2FEFA); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  box-shadow: none;
+}
+
+button:hover {
+ background: #396afc;  /* fallback for old browsers */
+ background: -webkit-linear-gradient(to right, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+ background: linear-gradient(to right, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ color: white;
+}
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid  #000;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <img src="https://img.icons8.com/nolan/64/000000/user.png" width="200" height="200" class="avatar">
+        </div>
+        <div class="info">
+            <input type="text" name="" id="name" placeholder="ENTER YOUR NAME" required>
+        </div>
+        <div>
+            <button class="btn"> Click To Get Avatar</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+    document.querySelector(".btn").addEventListener("click", () => {
+        const name = document.querySelector('#name').value
+        document.querySelector(".avatar").setAttribute("src", `https://joeschmoe.io/api/v1/${name}`);
+        const display = document.querySelector('.avatar').value;
+    });
+    </script>
+</body>
+
+</html>

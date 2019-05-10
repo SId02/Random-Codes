@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Picker</title>
+    <style>
+        :root {
+            --clrblack: #000000;
+            --clrwhite: #ffffff;
+            --clrblue: #0000ff;
+            --clrgrey: #808080;
+            --clrorange: #ffa500;
+            --clrpurple: #800080;
+            --clrred: #ff0000;
+            --clryellow: #FFFF00;
+            --clrcoral: #FF7F50;
+            --clrsilver: #C0C0C0;
+            --clrviolet: #EE82EE;
+            --clrgold: #FFD700;
+            --clrgh: #171516;
+            --clrquora: #a82400;
+            --clrreddit: #ff5700;
+            --clrblogger: #fb8f3d;
+            --clryoutube: #bb0000;
+            --clrlinkedin: #007bb6;
+            --clrtwitter: #00aced;
+            --clrst: #f58233;
+        }
+
+        body {
+            padding: 0px 0px 40px 0px;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            font-size: 3rem;
+            font-weight: lighter;
+
+        }
+
+        h4 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+            font-weight: lighter;
+        }
+
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1.1px;
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+
+        p {
+            width: 100%;
+            display: block;
+        }
+
+        .clr {
+            cursor: pointer;
+            overflow: hidden;
+            transition: .2s ease-in-out;
+            font-weight: 600;
+            text-align: center;
+            position: relative;
+            height: 200px;
+        }
+
+        .clr p {
+            height: 200px;
+            max-width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            font-size: 30px;
+            color: #fff;
+        }
+
+
+        .black {
+            background-color: var(--clrblack);
+        }
+
+        .white {
+            background-color: var(--clrwhite);
+            color: #000000 !important;
+        }
+
+        .blue {
+            background-color: var(--clrblue);
+        }
+
+        .grey {
+            background-color: var(--clrgrey);
+        }
+
+        .orange {
+            background-color: var(--clrorange);
+        }
+
+        .purple {
+            background-color: var(--clrpurple);
+        }
+
+        .red {
+            background-color: var(--clrred);
+        }
+
+        .yellow {
+            background-color: var(--clryellow);
+            color: #000000 !important;
+        }
+
+        .coral {
+            background-color: var(--clrcoral);
+        }
+
+        .violet {
+            background-color: var(--clrviolet);
+        }
+
+        .silver {
+            background-color: var(--clrsilver);
+        }
+
+        .gold {
+            background-color: var(--clrgold);
+        }
+
+        .github {
+            background-color: var(--clrgh);
+        }
+
+        .quora {
+            background-color: var(--clrquora);
+        }
+
+        .reddit {
+            background-color: var(--clrreddit);
+        }
+
+        .blogger {
+            background-color: var(--clrblogger);
+        }
+
+        .stackoverflow {
+            background-color: var(--clrst);
+        }
+
+        .youtube {
+            background-color: var(--clryoutube);
+        }
+
+        .linkedin {
+            background-color: var(--clrlinkedin);
+        }
+
+        .twitter {
+            background-color: var(--clrtwitter);
+        }
+
+
+
+   
+        /* media queries*/
+        @media (min-width: 600px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 5px;
+            }
+        }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Color Picker</h1>
+    <h4>Click to Copy to Clipboard</h4>
+    <h3>HTML COLORS  <span id="bclr"></span></h3>
+ 
+    <div class="grid">
+        <div class="clr">
+            <p class="black" onclick="copyToClipboard('.black')">#000000</p>
+           
+        </div>
+        <div class="clr">
+            <p class="white" onclick="copyToClipboard('.white')">#FFFFFF</p>
+        </div>
+        <div class="clr">
+            <p class="blue" onclick="copyToClipboard('.blue')">#0000F </p>
+        </div>
+        <div class="clr">
+            <p class="grey" onclick="copyToClipboard('.grey')">#80808 </p>
+        </div>
+        <div class="clr">
+            <p class="orange" onclick="copyToClipboard('.orange')">#FFA500</p>
+        </div>
+        <div class="clr" >
+            <p class="purple" onclick="copyToClipboard('.purple')">#800080</p>
+        </div>
+        <div class="clr">
+            <p class="red" onclick="copyToClipboard('.red')">#ff0000</p>
+        </div>
+        <div class="clr">
+            <p class="yellow" onclick="copyToClipboard('.yellow')">#FFFF00</p>
+        </div>
+        <div class="clr">
+            <p class="coral" onclick="copyToClipboard('.coral ')">#FF7F50</p>
+        </div>
+        <div class="clr">
+            <p class="silver" onclick="copyToClipboard('silver')">#C0C0C0</p>
+        </div>
+        <div class="clr">
+            <p class="violet" onclick="copyToClipboard('.violet')">#EE82E</p>
+        </div>
+        <div class="clr">
+            <p class="gold" onclick="copyToClipboard('.gold')">#FFD700</p>
+        </div>
+
+    </div>
+    <h3>SOCIAL MEDIA COLORS <span id="smclr"></span></h3>
+
+    <div class="grid">
+        <div class="clr">
+            <p class="github" onclick="copyToClipboard('.github')">#171516</p>
+        </div>
+        <div class="clr">
+            <p class="quora" onclick="copyToClipboard('.quora')">#a82400</p>
+        </div>
+        <div class="clr">
+            <p class="reddit" onclick="copyToClipboard('.reddit')">#ff5700</p>
+        </div>
+        <div class="clr">
+            <p class="stackoverflow" onclick="copyToClipboard('.stackoverflow')">#f58233</p>
+        </div>
+        <div class="clr">
+            <p class="youtube"  onclick="copyToClipboard('.youtube')">#bb0000</p>
+        </div>
+        <div class="clr">
+            <p class="linkedin"  onclick="copyToClipboard('.linkedin')">#007bb6</p>
+        </div>
+        <div class="clr">
+            <p class="twitter" onclick="copyToClipboard('.twitter')">#00aced</p>
+        </div>
+        <div class="clr">
+            <p class="blogger" onclick="copyToClipboard('.blogger')">#fb8f3d</p>
+        </div>
+    </div>
+<script src="js/jquery-3.3.1.js"></script>
+    <script>
+      function copyToClipboard(copyEle) {
+       var $temp = $("<input>");
+       $("body").append($temp);
+       $temp.val($(copyEle).text()).select();
+       document.execCommand("copy");
+       $temp.remove();
+
+       document.querySelector("#bclr").innerHTML = " Copied to Clipboard";
+       setInterval(change, 1000);
+       document.querySelector("#smclr").innerHTML = " Copied to Clipboard";
+       setInterval(changesocial, 2000);
+   }
+
+   function change() {
+       document.querySelector("#bclr").innerHTML = "";
+   }
+   function changesocial() {
+       document.querySelector("#smclr").innerHTML = "";
+   }
+    
+    
+    </script>
+</body>
+
+</html>

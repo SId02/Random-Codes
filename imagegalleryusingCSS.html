@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* .contianer {
+    display: grid;
+} */
+.contianer {
+    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: 300px 300px 300px; */
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* #pic1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#pic3 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+
+#pic4 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+} */
+
+img:nth-child(1)
+{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+img:nth-child(3)
+{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+img:nth-child(4)
+{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+
+/* .contianer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 300px 300px 300px;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+} */
+    </style>
+</head>
+<body>
+    <div class="contianer">
+        <img id="pic1" src="https://source.unsplash.com/1600x900/?business-work">
+        <img id="pic2" src="https://source.unsplash.com/1600x900/?electronics">
+        <img id="pic3" src="https://source.unsplash.com/1600x900/?animal">
+        <img id="pic4" src="https://source.unsplash.com/1600x900/?water">
+        <img id="pic5" src="https://source.unsplash.com/1600x900/?nature">
+        <img id="pic6" src="https://source.unsplash.com/1600x900/?food-drink">
+    </div>
+</body>
+</html>  

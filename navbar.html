@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Navbar</title>
+  <style>
+    .menu-btn {
+      position: absolute;
+      z-index: 3;
+      right: 35px;
+      top: 35px;
+      cursor: pointer;
+    }
+
+    .menu-btn .btn-line {
+      width: 28px;
+      height: 3px;
+      margin: 0 0 5px 0;
+      background: #fff;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      opacity: 0.9;
+      visibility: hidden;
+    }
+
+    .menu.show {
+      visibility: visible;
+    }
+
+    .menu-nav {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .menu-nav {
+      margin: 0;
+      padding: 0;
+      background: #9e9e9e;
+      list-style: none;
+    }
+
+    .menu .nav-item.current>a {
+      color: #ff9800;
+    }
+
+    .menu .nav-link {
+      display: inline-block;
+      position: relative;
+      font-size: 30px;
+      padding: 1rem 0;
+      font-weight: 300;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .menu .nav-link:hover {
+      color: #ff9800;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #fff;
+      height: 100%;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    body#bg-img {
+      background: url(../img/background.jpg);
+      background-attachment: fixed;
+      background-size: cover;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: rgba(206, 198, 198, 0.9);
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+      main {
+        align-items: center;
+        text-align: center;
+      }
+
+      ul.menu-nav {
+        float: none;
+        width: 100%;
+        min-height: 0;
+      }
+    }
+  </style>
+</head>
+
+<body id="bg-img">
+  <header>
+    <div class="menu-btn">
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+      <div class="btn-line"></div>
+    </div>
+
+    <nav class="menu">
+      <ul class="menu-nav">
+        <li class="nav-item current">
+          <a href="index.html" class="nav-link"> HOME </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link"> FEATURES </a>
+        </li>
+        <li class="nav-item">
+          <a href="work.html" class="nav-link">  ABOUT US  </a>
+        </li>
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">  CONTACT US </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="home">
+
+  </main>
+
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const menu = document.querySelector('.menu');
+    const menuNav = document.querySelector('.menu-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+    let showMenu = false;
+
+    menuBtn.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      if (!showMenu) {
+        menuBtn.classList.add('close');
+        menu.classList.add('show');
+        menuNav.classList.add('show');
+        navItems.forEach(item => item.classList.add('show'));
+        showMenu = true;
+      } else {
+        menuBtn.classList.remove('close');
+        menu.classList.remove('show');
+        menuNav.classList.remove('show');
+        navItems.forEach(item => item.classList.remove('show'));
+        showMenu = false;
+      }
+    }
+  </script>
+</body>
+
+</html>
