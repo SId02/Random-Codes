@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet">
+  <title>Profile</title>
+  <style>
+    .my-1 {
+      margin: 1rem 0
+    }
+
+    .p-1 {
+      padding: 1rem
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      overflow: hidden;
+      padding: 0 2rem;
+      margin-top: 6rem;
+      margin-bottom: 3rem
+    }
+
+    .x-large {
+      font-size: 4rem;
+      line-height: 1.2;
+      margin-bottom: 1rem
+    }
+
+    .large {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      margin-bottom: 1rem
+    }
+
+    .line {
+      height: 1px;
+      background: #ccc;
+      margin: 1.5rem 0
+    }
+
+    .bg-primary {
+      background-color: #696c6c;
+      color: #fff
+    }
+
+    .bg-light {
+      background-color: #f4f4f4;
+      color: #333;
+      border: #ccc 1px solid
+    }
+
+    .bg-dark {
+      background-color: #343a40;
+      color: #fff
+    }
+
+
+
+    .bg-white {
+      background-color: #fff;
+      color: #333;
+      border: #ccc 1px solid
+    }
+
+
+    .badge {
+      font-size: 0.8rem;
+      padding: 0.1rem;
+      text-align: center;
+      margin: 0.3rem;
+      background: #f4f4f4;
+      color: #333
+    }
+
+
+
+    .badge.badge-dark {
+      background-color: #343a40;
+      color: #fff
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #333
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    ul {
+      list-style: none
+    }
+
+    .profile {
+      display: grid;
+      grid-template-columns: 2fr 4fr 2fr;
+      grid-gap: 2rem;
+      align-items: center;
+      padding: 1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-areas: 'top top''about about''github github''exp edu';
+      grid-gap: 1rem
+    }
+
+    .profile-grid .profile-top {
+      grid-area: top;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center
+    }
+
+    .profile-grid .profile-top .icons a {
+      color: #fff;
+      margin: 0 0.3rem
+    }
+
+    .profile-grid .profile-top .icons a:hover {
+      color: #343a40
+    }
+
+    .profile-grid .profile-about {
+      grid-area: about;
+      text-align: center
+    }
+
+    .profile-grid .profile-about .skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center
+    }
+
+    .profile-grid .profile-exp {
+      grid-area: exp
+    }
+
+    .profile-grid .profile-edu {
+      grid-area: edu
+    }
+
+    .profile-grid .profile-exp>div,
+    .profile-grid .profile-edu>div {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: #ccc 1px dotted
+    }
+
+    .profile-grid .profile-exp:last-child,
+    .profile-grid .profile-edu:last-child {
+      border: none
+    }
+
+    .profile-grid .profile-exp p,
+    .profile-grid .profile-edu p {
+      margin: 0.5rem 0
+    }
+
+    .profile-grid .profile-github {
+      grid-area: github
+    }
+
+    .profile-grid .profile-github .repo {
+      display: flex
+    }
+
+    .profile-grid .profile-github .repo>div:first-child {
+      flex: 7;
+      flex-basis: 70%
+    }
+
+    .profile-grid .profile-github .repo>div:last-child {
+      flex: 3;
+      flex-basis: 20%
+    }
+
+    .skills li {
+      margin: 7px;
+      padding: 5px 10px;
+      color: white;
+      background: #696c6c;
+      list-style: none;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        margin-top: 8rem
+      }
+
+      .x-large {
+        font-size: 3rem
+      }
+
+      .large {
+        font-size: 2rem
+      }
+
+      .lead {
+        font-size: 1rem
+      }
+
+      .profile {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+
+      .profile ul {
+        display: none
+      }
+
+      .profile-grid {
+        grid-template-areas: 'top''about''github''exp''edu';
+      }
+
+      .profile-about .skills {
+        flex-direction: column
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container">
+    <div class="profile-grid my-1">
+      <div class="profile-top bg-primary p-2">
+        <h1 class="large">Chris Kane</h1>
+        <p class="lead">Software Developer at XYZ</p>
+        <p>Mumbai</p>
+        <div class="icons my-1">
+          <a href="#">
+            <i class="fab fa-linkedin-in fa-2x"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-stack-overflow fa-2x"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-codepen fa-2x"></i>
+          </a>
+        </div>
+      </div>
+      <div class="profile-about bg-light p-2">
+        <h2 class="text-primary">About</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione impedit provident ut animi voluptate sint
+          inventore recusandae aliquam, quo quam.
+        </p>
+        <div class="line"></div>
+        <h2 class="text-primary">Skill</h2>
+        <h4 class="text-primary">Fornt End Technologies</h4>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Sass</li>
+          <li>Git</li>
+        </ul>
+        <h4 class="text-primary">Back End Technologies</h4>
+        <ul class="skills">
+          <li>Java</li>
+          <li>Spring</li>
+          <li>Python</li>
+          <li>Mysql</li>
+          <li>Orcale Db</li>
+          <li>Docker</li>
+        </ul>
+      </div>
+      <div class="profile-exp bg-white p-2">
+        <h2 class="text-primary" style="text-align: center;">Experiences</h2>
+
+        <div>
+          <h3>ASD</h3>
+          <p>Oct 2008 - Nov 2010</p>
+          <p><strong>Position: </strong> Systems Admin</p>
+        </div>
+        <div>
+          <h3>PQR</h3>
+          <p>JAN 2003 - June 2008</p>
+          <p><strong>Position: </strong> Senior Developer</p>
+        </div>
+        <div>
+          <h3>XYZ</h3>
+          <p>Oct 1999 - DEC 2002</p>
+          <p><strong>Position: </strong> Trainee </p>
+        </div>
+      </div>
+      <div class="profile-edu bg-white p-2">
+        <h2 class="text-primary" style="text-align: center;">Education</h2>
+        <div>
+          <h3>University Of LMN</h3>
+          <p>Sep 1993 - June 1999</p>
+          <p><strong>Degree: </strong> Masters Computer Science</p>
+        </div>
+        <div>
+          <h3>University Of ABC</h3>
+          <p>July 1992 - June 1996</p>
+          <p><strong>Degree: </strong> Computer Science</p>
+        </div>
+        <div>
+          <h3>State Board</h3>
+          <p>June 1990 - March 1992</p>
+          <p>HSC</p>
+        </div>
+        <div>
+          <h3>CBSE</h3>
+          <p>June 1980 - March 1990</p>
+          <p> SSC </p>
+        </div>
+      </div>
+      <div class="profile-github">
+        <h2 class="text-primary my-1" style="text-align: center;">
+          Projects
+        </h2>
+        <div class="repo bg-white my-1 p-1">
+          <div>
+            <h4>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </h4>
+          </div>
+
+          <div>
+            <ul>
+              <li class="badge badge-dark"><a href="#">Live Demo</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="repo bg-white my-1 p-1">
+          <div>
+            <h4>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </h4>
+          </div>
+          <div>
+            <ul>
+              <li class="badge badge-dark"><a href="#">Live Demo</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="repo bg-white my-1 p-1">
+          <div>
+            <h4>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </h4>
+          </div>
+
+          <div>
+            <ul>
+              <li class="badge badge-dark"><a href="#">Live Demo</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="repo bg-white my-1 p-1">
+          <div>
+            <h4>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </h4>
+          </div>
+
+          <div>
+            <ul>
+              <li class="badge badge-dark"><a href="#">Live Demo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+</body>
+
+</html>
