@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        /* heading tag */
+        h1 {
+            background: #f4ea4a;
+            color: #000;
+            text-align: center;
+            line-height: 2;
+            font-weight: 100;
+            letter-spacing: 1vw;
+        }
+
+        /*  tabs */
+        main {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+        }
+
+        .tab-radio {
+            display: none;
+        }
+
+        .tab-1 {
+            order: 1;
+        }
+
+        .tab-2 {
+            order: 2;
+        }
+
+        .tab-3 {
+            order: 3;
+        }
+
+        .tab-4 {
+            order: 4;
+        }
+        .tab-panel {
+            width: 100%;
+            order: 99;
+            box-sizing: border-box;
+            height: 0;
+            visibility: hidden;
+            overflow: hidden;
+            color: #AABBBB;
+        }
+
+        .tab-content {
+            box-sizing: border-box;
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+
+        /* The magic selector */
+        .tab-radio:checked+.tab-label+.tab-panel {
+            height: auto;
+            visibility: visible
+        }
+
+        .tab-radio:checked+.tab-label+.tab-panel>.tab-content {
+            opacity: 1
+        }
+
+        /* Tab label styles */
+        .tab-label {
+            padding: 2rem 5vw;
+            color: #AABBBB;
+            border: 3px solid transparent;
+            border-radius: 100%;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color .2s ease;
+            box-shadow: 8px 8px 14px rgba(56, 53, 85, 0.3), -8px -8px 14px rgba(255, 255, 255, 0.7), inset 1px 1px 1px rgba(224, 229, 236, 0.7);
+        }
+
+        .tab-label:hover {
+            box-shadow: -3px -3px 8px 3px #FFF, 3px 3px 8px 3px #C4C4C4;
+            color: #2451f2;
+        }
+
+        .tab-label:active {
+            color: #2451f2;
+            box-shadow: -4px -4px 13px 4px #C4C4C4, 4px 4px 13px 4px #FFF;
+            border-color: #DFDFDF;
+        }
+
+        .tab-radio:checked+.tab-label {
+            background-color: #fff;
+        }
+
+        /* Media queries */
+        @media screen and (max-width: 640px) {
+            .tab {
+                order: 99;
+                width: 100%;
+            }
+        }
+
+        /* Main styling */
+        body {
+            font-family: sans-serif;
+            font-size: 18px;
+            line-height: 150%;
+            background-color: #e0e5ec;
+        }
+
+        h2 {
+            font-size: 2rem
+        }
+
+        h2,
+        p {
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            min-height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .areaa {
+            padding: 25px;
+            width: 100%;
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: row;
+            height: auto;
+            flex-wrap: wrap;
+        }
+
+        .form {
+            border-radius: 16px;
+            padding: 32px;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: -2px -2px 6px 2px #FFF, 2px 2px 6px 2px #C4C4C4;
+        }
+
+        h3 {
+            color: #2451f2;
+            font-size: 28px;
+            font-weight: 900;
+            text-shadow: 2px 2px 2px #FFF, -1px -1px -1px #A4A4A4;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .input {
+            appearance: none;
+            border: none;
+            outline: none;
+            background: none;
+            padding: 16px;
+            border-radius: 16px;
+            display: block;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto 16px;
+            box-shadow: inset -4px -4px 10px 4px #FFF, inset 4px 4px 10px 4px #C4C4C4;
+            color: #AAA;
+            font-size: 18px;
+            transition: 0.2s ease-out;
+        }
+
+        .input:placeholder {
+            color: #CCC;
+        }
+
+        .input:focus {
+            box-shadow: inset -1px -1px 3px 1px #FFF, inset 1px 1px 3px 1px #C4C4C4;
+        }
+
+        .btn {
+            color: #AABBBB;
+            cursor: pointer;
+            border: 3px solid transparent;
+            padding: 13px;
+            font-weight: 700;
+            box-shadow: -4px -4px 13px 4px #FFF, 4px 4px 13px 4px #C4C4C4;
+        }
+
+        .btn .icon {
+            margin-right: 8px;
+        }
+
+        .btn:focus {
+            box-shadow: -4px -4px 13px 4px #FFF, 4px 4px 13px 4px #C4C4C4;
+        }
+
+        .btn:hover {
+            box-shadow: -3px -3px 8px 3px #FFF, 3px 3px 8px 3px #C4C4C4;
+            color: #2451f2;
+        }
+
+        .btn.active {
+            color: #2451f2;
+            box-shadow: -2px -2px 8px 2px #C4C4C4, 2px 2px 8px 2px #FFF;
+            border-color: #DFDFDF;
+        }
+
+        .btn:active {
+            color: #2451f2;
+            box-shadow: -4px -4px 13px 4px #C4C4C4, 4px 4px 13px 4px #FFF;
+            border-color: #DFDFDF;
+        }
+
+        .disArea {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 15px 5px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            min-height: 58px;
+            color: #AABBBB;
+            font-size: 28px;
+            font-weight: 900;
+        }
+
+        /* test */
+    </style>
+    <title>Area</title>
+</head>
+
+<body>
+    <!-- <h1>Calculate Areas </h1> -->
+    <main>
+        <!-- tab 1 start -->
+        <input class="tab tab-radio tab-1" type="radio" id="tab-1" name="tab-group" checked>
+        <label class="tab tab-label tab-1" for="tab-1">Rectangle</label>
+        <section class="tab tab-panel">
+            <article class="tab-content">
+                <div class="container">
+                    <div class="form">
+                        <h3>Find the Area of Rectangle</h3>
+                        <input type="text" class="input" id="num1" placeholder="Number 1" />
+                        <input type="text" class="input" id="num2" placeholder="Number 2" />
+                        <button class="input btn calArea">Calculate Area</button>
+                        <div class="disArea input"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- tab 1 ends -->
+        <!-- tab 2 start -->
+        <input class="tab tab-radio tab-2" type="radio" id="tab-2" name="tab-group">
+        <label class="tab tab-label tab-2" for="tab-2">Square</label>
+        <section class="tab tab-panel">
+            <article class="tab-content">
+                <div class="container">
+                    <div class="form">
+                        <h3>Find the Area of Square</h3>
+                        <input type="text" class="input" id="snum1" placeholder="Number 1" />
+                        <button class="input btn calArea sqArea">Calculate Area</button>
+                        <div class="disArea input disSqA"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <!-- tab 2 ends -->
+        <!-- tab 3 start -->
+        <input class="tab tab-radio tab-3" type="radio" id="tab-3" name="tab-group">
+        <label class="tab tab-label tab-3" for="tab-3">Circle</label>
+        <section class="tab tab-panel">
+            <article class="tab-content">
+                <div class="container">
+                    <div class="form">
+                        <h3>Find the Area of Circle</h3>
+                        <input type="text" class="input" id="num1" placeholder="Number 1" />
+                        <input type="text" class="input" id="num2" placeholder="Number 2" />
+                        <button class="input btn calArea">Calculate Area</button>
+                        <div class="disArea input"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- tab 3 ends -->
+        <!-- tab 4 start -->
+        <input class="tab tab-radio tab-4" type="radio" id="tab-4" name="tab-group">
+        <label class="tab tab-label tab-4" for="tab-4">Triangle</label>
+        <section class="tab tab-panel">
+            <article class="tab-content">
+                <div class="container">
+                    <div class="form">
+                        <h3>Find the Area of Triangle</h3>
+                        <input type="text" class="input" id="num1" placeholder="Number 1" />
+                        <input type="text" class="input" id="num2" placeholder="Number 2" />
+                        <input type="text" class="input" id="num3" placeholder="Number 2" />
+                        <button class="input btn calArea triArea">Calculate Area</button>
+                        <div class="disArea input disTriArea"></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <!-- tab 4 ends -->
+
+
+        <!--  -->
+    </main>
+
+
+
+    <script>
+        /* Script start for area Calculate */
+
+        /*Calculate area for Rectangle start*/
+
+        document.querySelector(".calArea").addEventListener("click", isArea);
+
+        function isArea() {
+            let length = document.querySelector("#num1").value;
+            let breadth = document.querySelector("#num2").value;
+            let Area;
+            Area = length * breadth;
+            document.querySelector(".disArea").textContent = Area;
+        }
+        /* Calculate area for Rectangle ends */
+
+        /*Calculate area for Square start*/
+        document.querySelector(".sqArea").addEventListener("click", isAreaSquare);
+
+        function isAreaSquare() {
+            let s = document.querySelector("#snum1").value;
+            let Area = s * s;
+            document.querySelector(".disSqA").textContent = Area;
+        }
+        /* Calculate area for Square ends */
+
+        /* Calculate area for Cricle start */
+        /* Calculate area for Cricle ends */
+
+        /* Calculate area for Triangle start */
+
+        /*Calculate area for Triangle ends */
+
+
+        /* Script ends for area Calculate */
+
+        /*
+		Area of a circle = A=πr2
+
+
+function circle(radius)
+{
+    this.radius = radius;
+  // area method
+    this.area = function () 
+    {
+        return Math.PI * this.radius * this.radius;
+    };
+  // perimeter method
+    this.perimeter = function ()
+    {
+        return 2*Math.PI*this.radius;
+    };
+}
+var c = new circle(3);
+console.log('Area =', c.area().toFixed(2));
+console.log('perimeter =', c.perimeter().toFixed(2));
+		*/
+    </script>
+
+</body>
+
+</html>
