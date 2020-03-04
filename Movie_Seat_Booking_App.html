@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #34495e;
+    color: #fff;
+    font-size: 16px;
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: auto repeat(5, 116px) auto;
+    grid-template-areas:
+        "."
+        "details"
+        "cinema"
+        "cinema"
+        "cinema"
+        "reset"
+        ".";
+}
+
+.movie-details-container {
+    grid-area: details;
+    align-self: end;
+}
+
+.select-container {
+    text-align: center;
+}
+
+select {
+    width: 260px;
+    height: 30px;
+    background-color: white;
+    color: #34495e;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+    margin-left: 4px;
+    text-align-last: center;
+}
+
+#movie:focus {
+    outline: none;
+    font-size: 16px;
+}
+
+.legend-container {
+    height: 40px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 40px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.legend-container li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.legend-container li span {
+    margin: 3px;
+}
+
+.cinema-container {
+    grid-area: cinema;
+}
+
+.canvas {
+    background-color: #fff;
+    height: 110px;
+    width: 280px;
+    margin-top: 30px;
+    transform: perspective(800px) rotatex(-35deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.seats {
+    display: grid;
+    grid-template-columns: repeat(2, 30px) 50px repeat(3, 30px) 50px 30px;
+    margin: 10px auto 0 auto;
+}
+
+.seat {
+    background-color: #35ac49;
+    height: 20px;
+    width: 20px;
+    margin: 5px;
+    justify-self: end;
+}
+
+.seat.selected {
+    background-color: #f58220;
+}
+
+.seat.occupied {
+    background-color: #737374;
+}
+
+.seats .seat:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.seats .seat.occupied:hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+.price-container {
+    grid-area: reset;
+}
+
+.price-container p {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.price-container span {
+    color: #6feaf6;
+}
+
+		</style>
+        <title>Movie Seat Booking App</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="movie-details-container">
+                <div class="select-container">
+                    <label for="movie">Pick a movie:</label>
+                    <select id="movie"> 
+                        <option value="80">Lorem ipsum dolor. (80 ₹)</option>
+                        <option value="120">Lorem ipsum dolor sit amet. (120 ₹)</option>
+                        <option value="110">Lorem. (110 ₹)</option>
+                        <option value="90">The Lorem ipsum dolor sit. (90 ₹)</option>
+                    </select>
+                </div>
+                <ul class="legend-container">
+                    <li>
+                        <div class="seat"></div>
+                        <span>N/A</span>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <span>Selected</span>
+                    </li>
+                    <li>
+                        <div class="seat occupied"></div>
+                        <span>Occupied</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cinema-container">
+                <div class="canvas"></div>
+                <div class="seats">
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat selected"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                    <div class="seat"></div>
+                    <div class="seat"></div>
+                    <div class="seat occupied"></div>
+                </div>
+            </div>
+            <div class="price-container">
+                <p>
+                    You have selected <span>7</span> seats for a price of
+                    <span>800</span> ₹
+                </p>
+                <br>
+                <p>
+                    N/A <span>43</span> | Selected <span>7</span>  |  Occupied <span>6</span> 
+                </p>
+            </div>
+        </div>
+    </body>
+</html>
