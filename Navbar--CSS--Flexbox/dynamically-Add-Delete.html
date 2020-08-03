@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dynamically-Add-Delete-items</title>
+		<style>
+			body {
+				width: 100%;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;	
+				font-size: 12px;
+				background-color: #ecf0f3;
+				color: #a0a5a8;
+			}
+		
+			.addinputs {
+				margin: 10px;
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container formDetail">
+			<div class="field is-horizontal">
+				<div class="field-body">
+					<div class="field">
+						<p class="control is-expanded">
+							<input class="input" type="text" placeholder="Name" />
+						</p>
+					</div>
+					<div class="field">
+						<p class="control is-expanded">
+							<input class="input" type="email" placeholder="Email" />
+						</p>
+					</div>
+					<div class="field">
+						<p class="control is-expanded">
+							<input class="input" type="text" placeholder="Phone" />
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="field is-horizontal">
+				<div class="field-body">
+					<div class="field">
+						<div class="control">
+							<button class="button is-primary addMember">
+								Add Member
+							</button>
+
+							<button class="button is-primary delMember">
+								Delete Member
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<section class="addinputs"></section>
+		</div>
+		<script>
+			/* */
+			document.querySelector(".addMember").addEventListener("click", getAdd);
+			document.querySelector(".delMember").addEventListener("click", getDel);
+			let count = 0;
+
+			function getAdd(event) {
+				event.preventDefault();
+				if (count <= 10) {
+					document.querySelector(".addinputs").innerHTML += `
+               
+			  <div class="addedMember">
+			  <input class="name ${count}"  type="text" placeholder="Name ${count}">
+			    <input class="email ${count}"  type="email" placeholder="Email ${count}">
+			     <input class="phone ${count}"  type="text" placeholder="Phone ${count}">
+			  </div>
+			`;
+					count++;
+				}
+			}
+
+			function getDel(event) {
+				event.preventDefault();
+				if (count > 0) {
+					var added = document.getElementsByClassName("addedMember");
+					var lastadded = added[added.length - 1];
+					lastadded.parentNode.removeChild(lastadded);
+					count--;
+				}
+			}
+		</script>
+	</body>
+</html>

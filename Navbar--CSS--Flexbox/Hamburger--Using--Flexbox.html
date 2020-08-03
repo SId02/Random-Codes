@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Hamburger--Using--Flexbox</title>
+
+		<style>
+			/*   Style Navbar First starts      */
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.container {
+				width: 90%;
+				max-width: 1200px;
+				margin: 20px auto;
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat (3, 1fr);
+				grid-template-rows: repeat (4, auto);
+				grid-template-areas: "header header header";
+			}
+			.header {
+				grid-area: header;
+				padding: 20px;
+				background: #fff;
+				box-shadow: 0px 0px 70px rgba (102, 102, 102, 0.2);
+			}
+
+			.header .logo {
+				margin-bottom: 20px;
+				text-transform: uppercase;
+				text-align: center;
+				letter-spacing: 3px;
+			}
+
+			.logo h1 {
+				font-size: 30px;
+			}
+
+			.logo .initials-logo {
+				padding: 5px;
+				border: 2px solid #000;
+				display: inline-block;
+				font-size: 16px;
+				margin-bottom: 15px;
+			}
+
+			.menu {
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.menu a {
+				padding: 10px;
+				color: #000;
+				display: block;
+				text-decoration: none;
+				text-transform: uppercase;
+				font-weight: 400;
+				width: 100%;
+				text-align: center;
+				transition: 0.2s ease all;
+				font-size: 16px;
+			}
+
+			.menu a:hover {
+				background: #20c997;
+				color: #fff;
+			}
+			/*   Style Navbar Seconds ends      */
+		</style>
+	</head>
+
+	<body>
+		<!-- Navbar seconds Starts -->
+		<div class="container">
+			<header class="header">
+				<div class="logo">
+					<p class="initials-logo">Logo</p>
+				</div>
+				<nav class="menu">
+					<a href="#"> Home </a>
+					<a href="#"> About </a>
+					<a href="#"> Articles </a>
+					<a href="#"> Contact </a>
+				</nav>
+			</header>
+		</div>
+
+		<script></script>
+	</body>
+</html>

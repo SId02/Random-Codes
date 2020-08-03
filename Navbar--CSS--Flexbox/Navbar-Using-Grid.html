@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Navbar-Using-Grid</title>
+
+		<style>
+			html {
+				font-size: 100%;
+				box-sizing: border-box;
+			}
+
+			body {
+				margin: 0px;
+				padding: 0px;
+				min-height: 100vh;
+				background-color: #fff;
+			}
+
+			*,
+			*::before,
+			*::after {
+				box-sizing: inherit;
+			}
+
+			*,
+			a {
+				color: #000;
+			}
+
+			a {
+				position: relative;
+				text-decoration: none;
+			}
+			a::before {
+				content: "";
+				position: absolute;
+				height: 3px;
+				right: 0px;
+				bottom: -3px;
+				left: 0px;
+				background-color: #6C41DC;
+			}
+			a:hover {
+				color: #6C41DC;
+			}
+      
+			a:hover::before {
+				background: linear-gradient(to right, #6C41DC 40%, #3f3939 75%);
+			}
+
+			nav {
+				margin-bottom: 4rem;
+				padding: 10px;
+				font-size: 1.5rem;
+			}
+			@media (min-width: 600px) {
+				nav {
+					padding: 20px;
+				}
+			}
+			nav ul {
+				list-style-type: none;
+				margin: 0px;
+				padding: 0px;
+			}
+			nav a {
+				font-size: 1.25rem;
+			}
+			@media (min-width: 42em) {
+				nav a {
+					font-size: 2rem;
+				}
+			}
+		nav.grid ul {
+				display: grid;
+				grid-template-columns: repeat(3, 100px);
+				grid-gap: 10px;
+				justify-content: center;
+				justify-items: center;
+			}
+			@media (min-width: 600px) {
+				nav.grid ul {
+					grid-template-columns: 1fr repeat(3, fit-content(50px));
+					grid-gap: 20px;
+					justify-items: end;
+				}
+			}
+			nav.grid .fullwidth {
+				grid-column: 1 / 4;
+			}
+			@media (min-width: 600px) {
+				nav.grid .fullwidth {
+					grid-column: 1 / 2;
+					justify-self: start;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		
+
+		<nav class="grid">
+			<ul>
+				<li class="fullwidth"><a href="#">Logo</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Team</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</nav>
+
+
+	</body>
+</html>

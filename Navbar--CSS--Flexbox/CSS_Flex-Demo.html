@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			:root {
+				--main-white-color: #f2f2f2;
+				--main-black-color: black;
+				--page-banner-color: #febc85;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+
+			button {
+				background: none;
+				cursor: pointer;
+				box-shadow: inset 4px 4px black;
+			}
+			button:hover {
+				background: #febc85;
+			}
+			ul {
+				list-style: none;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+			/* CONTAINER */
+			.wrapper {
+				display: flex;
+				flex-direction: column;
+				min-height: 100vh;
+			}
+
+			.wrapper > * {
+				padding: 20px;
+			}
+
+			/* HEADER*/
+			.page-header {
+				background: var(--main-white-color);
+			}
+			.page-header nav {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+			}
+
+             nav ul li:hover{
+                	/* background: #febc85; */
+                    border-bottom: double 2px #febc85;
+            }
+
+			.page-header ul {
+				display: flex;
+				order: 1;
+				width: 100%;
+				margin-top: 15px;
+			}
+
+			.page-header ul li:not(:last-child) {
+				padding-right: 15px;
+			}
+
+			.page-header .cta-contact {
+				font-family: inherit;
+				font-size: 1.2rem;
+				padding: 5px 18px;
+				border: 1px solid;
+				border-radius: 5px;
+			}
+
+			/* MAIN*/
+			.page-banner {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				flex-grow: 1;
+				min-height: 350px;
+				/* background: var(--page-banner-color) url(hero_background.jpg) no-repeat
+					center / cover; */
+                    background: var(--page-banner-color);
+				background-blend-mode: luminosity;
+				color: var(--main-white-color);
+			}
+
+			.page-banner div {
+				max-width: 500px;
+			}
+
+			.page-banner h1 {
+				margin-bottom: 20px;
+			}
+
+			.page-banner p + p {
+				margin-top: 10px;
+			}
+
+			/* FOOTER */
+			.page-footer {
+				display: flex;
+				flex-direction: column-reverse;
+				background: var(--main-white-color);
+			}
+
+			/* Media Query */
+			@media screen and (min-width: 550px) {
+				.page-header ul {
+					width: auto;
+					margin-top: 0;
+				}
+
+				.page-header .cta-contact {
+					order: 1;
+				}
+
+				.page-footer {
+					flex-direction: row;
+					justify-content: space-between;
+					align-items: center;
+				}
+			}
+
+			@media screen and (min-width: 768px) {
+				body {
+					font-size: 18px;
+				}
+
+				.page-banner {
+					padding-left: 90px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header class="page-header">
+				<nav>
+					<h2 class="logo">LOGO</h2>
+					<ul>
+						<li>
+							<a href="#">Work</a>
+						</li>
+						<li>
+							<a href="#">Services</a>
+						</li>
+						<li>
+							<a href="#">Team</a>
+						</li>
+						<li>
+							<a href="#">About</a>
+						</li>
+					</ul>
+					<button class="cta-contact">Get in touch</button>
+				</nav>
+			</header>
+			<main class="page-banner">
+				<div>
+					<h1>Lorem ipsum dolor sit amet.</h1>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur dignissimos neque ex ducimus aperiam at.
+					</p>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</main>
+			<footer class="page-footer">
+				<small>© Copyright 2030. All rights reserved.</small>
+			</footer>
+		</div>
+	</body>
+</html>
