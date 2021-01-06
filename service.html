@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <title>Services</title>
+    <style>
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+        font-size: 14px;
+        line-height: 1.6rem;
+        color: #333;
+      }
+
+      a {
+        color: #0afcda;
+        text-decoration: none;
+      }
+
+      h5 {
+        font-size: 1.6rem;
+      }
+
+      h6 {
+        font-size: 1.4rem;
+      }
+
+      .block__heading {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .block__heading p {
+        font-size: 0.8rem;
+      }
+
+      .container {
+        width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+      }
+
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+      }
+
+      .col-12,
+      .col-s-6,
+      .col-m-4 {
+        position: relative;
+        width: 100%;
+        padding: 0 15px;
+      }
+
+      .col-12 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .service__info {
+        padding: 3rem 0;
+      }
+
+      .service__info-item {
+        position: relative;
+        padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+        border: 1px solid #257557;
+        margin: 1.5rem 0;
+      }
+
+      .service__info-item,
+      .service__info-item * {
+        transition: all 0.3s ease-in-out;
+      }
+
+      .service__info-item > i {
+        position: absolute;
+        right: 1rem;
+        top: -1.75rem;
+        display: inline-block;
+        background-color: #0b87f1;
+        color: #fff;
+        width: 3.5rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        text-align: center;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+      }
+
+      .service__info-item h5 {
+        margin-bottom: 1rem;
+      }
+
+      .service__info-item a {
+        margin-top: 1rem;
+        display: block;
+        color: #333;
+      }
+
+      .service__info-item:hover {
+        background-color: #0b87f1;
+      }
+
+      .service__info-item:hover > i {
+        border-color: #fff;
+        top: -2.5rem;
+      }
+
+      .service__info-item:hover * {
+        color: #fff;
+      }
+
+      @media (min-width: 768px) {
+        .service__info {
+          padding: 5rem 0;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .service__info-item {
+          margin: 1.5rem 0.75rem;
+        }
+      }
+
+      @media (min-width: 576px) {
+        .container {
+          max-width: 540px;
+        }
+
+        .column-small-4 {
+          flex: 0 0 33.33%;
+          max-width: 33.33%;
+        }
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          max-width: 720px;
+        }
+
+        .col-m-4 {
+          flex: 0 0 33.33%;
+          max-width: 33.33%;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .container {
+          max-width: 960px;
+        }
+      }
+
+      @media (min-width: 1200px) {
+        .container {
+          max-width: 1140px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="service__info">
+      <div class="container">
+        <div class="block__heading">
+          <p>Lorem ipsum dolor sit amet.</p>
+          <h6>Lorem ipsum dolor sit amet.</h6>
+        </div>
+
+        <div class="service__info-items">
+          <div class="row">
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-chart-line"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo;</a>
+              </article>
+            </div>
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-redo"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo;</a>
+              </article>
+            </div>
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-redo"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo;</a>
+              </article>
+            </div>
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-redo"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo;</a>
+              </article>
+            </div>
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-chart-line"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo;</a>
+              </article>
+            </div>
+            <div class="col-12 col-s-6 col-m-4">
+              <article class="service__info-item">
+                <i class="fas fa-chart-line"></i>
+                <h5>Lorem ipsum dolor sit amet.</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Dolores repellat delectus, placeat consequuntur non. Quo.
+                </p>
+                <a href="#">More Details &raquo; </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

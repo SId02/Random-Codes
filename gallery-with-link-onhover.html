@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 3rem 0 0 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #697477;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      p {
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      a {
+        color: #697477;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .section {
+        padding: 3rem 0;
+      }
+
+      .section-title {
+        position: relative;
+        font-size: 1.25rem;
+        color: #2a3b47;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      .section-title::after {
+        position: absolute;
+        content: "";
+        width: 32px;
+        height: 0.18rem;
+        left: 0;
+        right: 0;
+        margin: auto;
+        top: 2rem;
+        background-color: #5361ff;
+      }
+
+      .grid {
+        max-width: 1024px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-column-gap: 2rem;
+        width: calc(100% - 2rem);
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+
+      .gallery {
+        background-color: #fafaff;
+      }
+
+      .gallery__container {
+        justify-items: center;
+        row-gap: 2rem;
+      }
+
+      .gallery__img {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .gallery__img img {
+        border-radius: 0.5rem;
+      }
+
+      .gallery__link {
+        position: absolute;
+        bottom: -100%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 0.5rem;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: 0.3s;
+      }
+
+      .gallery__img:hover .gallery__link {
+        bottom: 0;
+      }
+
+      .gallery__link-name {
+        color: #01128c;
+      }
+
+      @media screen and (min-width: 768px) {
+        body {
+          margin: 0;
+        }
+
+        .section {
+          padding-top: 4rem;
+        }
+
+        .section-title {
+          margin-bottom: 3rem;
+        }
+
+        .section-title::after {
+          width: 64px;
+          top: 3rem;
+        }
+
+        .gallery__container {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          column-gap: 2rem;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        .grid {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="gallery section" id="gallery">
+      <h2 class="section-title">Gallery</h2>
+
+      <div class="grid gallery__container">
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?electronics" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?phone" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?city" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?nature" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?water" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img
+            src="https://source.unsplash.com/1600x900/?architecture"
+            alt=""
+          />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?water" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?nature" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+        <div class="gallery__img">
+          <img src="https://source.unsplash.com/1600x900/?city" alt="" />
+
+          <div class="gallery__link">
+            <a href="#" class="gallery__link-name">More Details &raquo;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
